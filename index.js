@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 var morgan = require('morgan');
 const bodyParser = require('body-parser');
-const cors = require('cors')
+const cors = require('cors');
+app.use(express.static('build'));
 
-app.use(cors())
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :request-body'));
